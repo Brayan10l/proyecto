@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- Declaración -->
+<html lang="es">
+<!-- El atributo lang - sirve para definir el lenguaje en que están escritos los elementos o el lenguaje en el cual deberían de estar escritos. -->
+<head>
+  <meta charset="UTF-8">
+  <!-- El atributo charset especifica el tipo de caracteres que se utilizan en el documento. UTF-8 es retrocompatible con ASCII -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Aporta información sobre los encabezados de respuesta HTTP. X-UA-compatible en HTML es otro meta-tag útil en la página y este meta-tag se relaciona mayormente con el navegador. Dependiendo de los navegadores de Microsoft que usted apoye, puede que no necesite seguir usando la etiqueta X-UA-Compatible. Si necesitas soportar IE 9 o IE 8, entonces te recomendaría usar la etiqueta.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- El atributo viewport especifica el tamaño de la ventana del navegador. Importante para hacer nuestras páginas responsivas-->
+  <!-- width=device-width asegurará que la página se cambie de tamaño para que coincida con el ancho de la pantalla, que también variará según el dispositivo del usuario. -->
+  <!-- initial-scale=1.0 establece el nivel de zoom inicial cuando el navegador carga la página por primera vez. -->
+  <meta name="author" content="Brayan Mauricio Bermúdez Montiel">
+  <!-- El atributo author te permite nombrar al autor, el desarrollador de la página -->
+  <meta name="description" content="No más de 165 caracteres">
+  <!-- El atributo description especifica una descripción del documento - no más de 165 caracteres -->
+  <title>Mi primer tienda </title>
+  <!-- El atributo title especifica el título del documento. - no más de 55 y 65 caracteres -->
+  <link rel="icon" href="assets/img/academlo.png" type="image/png">
+  <!-- El atributo icon especifica el icono del documento. -->
+  <!-- href significa Hypertext Reference -->
+  <!-- type es buena práctica colocarlo para que el SEO detecte qué tipo de imagen es la que va a renderizar -->
+  <link rel="stylesheet" href="style.css">
+  <!-- De esta manera integramos el archivo css a nuestro html para dar estilos. El atributo stylesheet hace referencia al tipo de archivo que estamos utilizando -->
+  <link rel="alternate" hreflang="es" href="http://ejemplo.com/es/index.html" />
+  <link rel="alternate" hreflang="en" href="http://ejemplo.com/en/index.html" />
+  <link rel="alternate" hreflang="fr" href="http://ejemplo.com/fr/index.html" />
+  <!--link servirá para especificar los idiomas de las diferentes versiones de una página web -->
+<!-- Font  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Boxicons  -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- CSS  -->
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- Integrar JS  -->
+<script src="assets/js/main.js" type="module" defer></script>
+</head>
+<body>
+    <h1>Creando carrito</h1>
+    <!-- Loader -->
+    <div class="loader">
+      <div class="loader__container">
+        <span></span>
+      </div>
+    </div>
+    <!-- Header  -->
+    <header class="header">
+    <!-- header es la cabecera principal, vamos a utilizar el nav para crear menu  -->
+    <!--clase abstracta derivada de Component,
+       que representa a cualquier componente que pueda contener otros componentes-->
+       <nav class="nav container">
+        <a href="/" class="nav__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="logo--icon">
+            <path fill="currentColor"
+                      d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+            </path>
+          </svg>        
+        </a>
+  
+        <div class="nav__menu">
+          <button type="button" class="nav__btn btn--close">
+            <i class='bx bx-x'></i>
+          </button>
+          <ul class="nav__list">
+            <li class="nav__items">
+              <a href="#" class="nav__link">Inicio</a>
+            </li>
+            <li class="nav__items">
+              <a href="#" class="nav__link">Productos</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="nav__buttons">
+          <button type="button" class="nav__btn btn--cart">
+            <i class='bx bx-shopping-bag'></i>
+            <span class="notify">0</span>
+          </button>
+          <button type="button" class="nav__btn btn--menu">
+            <i class='bx bx-grid-alt'></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+  
+    <!-- Main  -->
+    <main class="main">
+      <section class="products section">
+        <h2 class="products__title section--title">Productos</h2>
+        <div class="products__container container">
+        </div>
+      </section>
+    </main>
+     <!-- Cart  -->
+    <div class="cart">
+      <div class="cart__container">
+        <div class="cart__header">
+          <h3 class="cart__title">Carrito de Compras</h3>
+          <button type="button" class="cart__btn btn--close">
+            <i class='bx bx-x'></i>
+          </button>
+        </div>
+        <div class="cart__body">
+        
+        </div>
+        <div class="cart__footer">
+          <div class="cart__count">
+            <span class="cart__count--text">Artículos</span>
+            <span class="cart__count--item">0</span>
+          </div>
+          <div class="cart__total">
+            <span class="cart__total--text">Total</span>
+            <span class="cart__total--item">$0</span>
+          </div>
+          <button type="button" class="cart__btn btn--buy">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <!-- Footer  -->
+    <footer class="footer section">
+      <div class="footer__container container">
+        <div class="footer__top">
+          <div class="footer__left">
+            <h3 class="footer__title">Sobre Nosotros</h3>
+            <p class="footer__text">Brayan M, Costa Rica</p>
+          </div>
+          <div class="footer__right">
+            <h3 class="footer__title">Redes Sociales</h3>
+            <ul class="footer__social">
+              <li class="footer__item">
+                <a href="#" class="footer__link">
+                  <i class='bx bxl-github'></i>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">
+                  <i class='bx bxl-instagram'></i>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">
+                  <i class='bx bxl-linkedin' ></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="footer__bottom">
+          <p class="footer__text">Todos los derechos reservados</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  </html>
